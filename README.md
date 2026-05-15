@@ -75,17 +75,4 @@ Ready for SOC2/ISO audit logging via middleware hooks
 500 AI Analysis Failed: Verify GEMINI_API_KEY and network access to generativelanguage.googleapis.com
 CORS Errors: Ensure allow_origins in main.py matches frontend URL
 
-
 ---
-
-### ✅ Next Steps to Productionize
-1. Replace header-based auth with `NextAuth` + `postgres`
-2. Add `celery` for async log processing (large files)
-3. Integrate `Ollama` fallback:
-   ```python
-   def analyze_with_ollama(self, prompt, model="mistral"):
-       # requests.post("http://localhost:11434/api/generate", json={...})
-    ```
-4. Add pytest coverage & CI/CD pipeline
-5. Wrap in Docker Compose for one-command deployment
-
